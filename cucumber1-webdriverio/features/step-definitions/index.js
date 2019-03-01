@@ -75,5 +75,30 @@ Then('I expect to see {string}', error => {
   });
 
 
+ When(/^I fill register form with (.*) and (.*)$/ , (nombre, apellido, correo, password) => {
+     var cajaLogIn = browser.element('.cajaSignUp');
+
+    var nombreInput = cajaLogIn.element('input[name="nombre"]');
+    nombreInput.click();
+    nombreInput.keys(nombre);
+
+    var apellidoInput = cajaLogIn.element('input[name="apellido"]');
+    apellidoInput.click();
+    apellidoInput.keys(apellido);
+
+    var correoInput = cajaLogIn.element('input[name="correo"]');
+    correoInput.click();
+    correoInput.keys(correo);
+
+    var passwordInput = cajaLogIn.element('input[name="password"]');
+    passwordInput.click();
+    passwordInput.keys(password);
+
+    var aceptaInput = cajaLogIn.element('input[name="acepta"]');
+    aceptaInput.click();
+    //step %(I check "#{label}") unless expected_value.nil?
+    sleep(1000)
+
+  });
 
 });

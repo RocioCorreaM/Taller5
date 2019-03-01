@@ -27,4 +27,20 @@ Scenario Outline: Login sucess with corect inputs
       | rdpcm82@gmail.com   |    12345678|
 
 
+Scenario Outline: Register sucess with corect inputs
+
+ Given I go to losestudiantes home screen
+   When I open the login screen
+   And I fill register form with <nombre> and <apellido> and <correo> and <password>
+   And I try to register
+   Then I expect to be able to login sucess
+
+   Examples:
+     | nombre               | apellido    | correo             |password|
+     | rocio                | davila      | rdpcm821@gmail.com |12345678|
+
+
+
+
+
 
